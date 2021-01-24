@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Attrition</title>
+    <link rel="shortcut icon" href="./Icons/House searching-bro.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body onload="startServer()">
+      <div class="container-fluid hero">
+        <div class="subhero">
+            <h1 data-aos="fade" data-aos-duration="1200" data-aos-delay='550' class="display-4 ConName">Employee Attrition</h1>
+            <div data-aos="fade" data-aos-duration="1200" data-aos-delay='650' class="phrase">Are Your Employees Really Happy?</div>
+            <div data-aos="fade" data-aos-duration="1200" data-aos-delay='750' class="infoText">Wanna know if your valuable employees are wondering about leaving your firm? Our AI model will help you figure out the truth. Just fill in the data that you know and leave the rest of the fields blank.</div>
+            <a href="#aboutconclavediv" style="text-decoration:none;">
+            <div data-aos="fade" data-aos-duration="1200" data-aos-delay='900' id='btn' class="mainButton">
+                <span class="registerText">Get Your Prediction</span>
+                <span class="registerIcon">
+                    <img src="https://img.icons8.com/metro/18/1062BA/long-arrow-down.png" />
+                </span>
+            </div>
+            </a>
+        </div>
+            <img src="./Icons/House searching-bro.png" class="heropic">
+       </div>
+
+
+        <div id="aboutconclavediv" class="aboutconclavediv">
+            <div data-aos="fade" data-aos-duration="1200" data-aos-delay='400' class="HeadingAbout">
+                <span style="color:#f9f8f6; ">Employee Attrition Rate</span>
+            </div>
+            <div data-aos="fade" class='fullform'>
+                <div data-aos="fade" class='formrow'>
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input id="Name" name='Name' autocomplete="off" required>
+                    <label for='Name' class='dependants-name'>
+                        <span class="content-dependants">Name</span>
+                    </label>
+                </div>
+
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input type='number' step="0.000000000000001" id="satisfaction_level" name='satisfaction_level' autocomplete="off" required>
+                    <label for='satisfaction_level' class='dependants-name'>
+                        <span class="content-dependants">Satisfaction Level</span>
+                    </label>
+                </div>
+                </div>
+
+                <div data-aos="fade" class='formrow'>
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input type='number' step="0.000000000000001" id="last_evaluation" name='last_evaluation' autocomplete="off" required>
+                    <label for='last_evaluation' class='dependants-name'>
+                        <span class="content-dependants">Last Evaluation</span>
+                    </label>
+                </div>
+
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input type='number' step="0.000000000000001" id="number_project" name='number_project' autocomplete="off" required>
+                    <label for='number_project' class='dependants-name'>
+                        <span class="content-dependants">Number of Project Assigned</span>
+                    </label>
+                </div>
+                </div>
+
+                <div data-aos="fade" class='formrow'>
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input type='number' step="0.000000000000001" id="average_monthly_hours" name='average_monthly_hours' autocomplete="off" required>
+                    <label for='average_monthly_hours' class='dependants-name'>
+                        <span class="content-dependants">Average Monthly Hours</span>
+                    </label>
+                </div>
+
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input type='number' step="0.000000000000001" id="time_spend_company" name='time_spend_company' autocomplete="off" required>
+                    <label for='time_spend_company' class='dependants-name'>
+                        <span class="content-dependants">Years Spent in Company</span>
+                    </label>
+                </div>
+                </div>
+
+                <div data-aos="fade" class='formrow'>
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='500' class="form">
+                    <select id="work_accident" name='work_accident' onchange='changework_accident()'>
+                        <option value="invalid"></option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <label for='work_accident' class='dependants-name'>
+                        <span class="content-dependants">Work Accident Suffered</span>
+                    </label>
+                </div>   
+
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <select id="salary" name='salary' onchange='changesalary()'>
+                        <option value="invalid"></option>
+                        <option value="high">High</option>
+                        <option value="med">Med</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <label for='salary' class='dependants-name'>
+                        <span class="content-dependants">Salary</span>
+                    </label>
+                </div>
+                </div>
+
+                <div data-aos="fade" class='formrow'>
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <select id="promotion_last_5years" name='promotion_last_5years' onchange='changepromotion_last_5years()'>
+                        <option value="invalid"></option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <label for='promotion_last_5years' class='dependants-name'>
+                        <span class="content-dependants">Promoted in the last 5 years</span>
+                    </label>
+                </div>
+
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='500' class="form">
+                    <select id="dept" name='dept' onchange='changedept()'>
+                        <option value="invalid"></option>
+                        <option value="it">IT</option>
+                        <option value="randd">RandD</option>
+                        <option value="hr">HR</option>
+                        <option value="management">Management</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="product_mng">Product_mng</option>
+                        <option value="sales">Sales</option>
+                        <option value="support">Support</option>
+                        <option value="technical">Technical</option>
+                    </select>
+                    <label for='dept' class='dependants-name'>
+                        <span class="content-dependants">Department</span>
+                    </label>
+                </div>
+                </div>
+                <button data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="btn" onclick="onBtnClick()"> Calculate</button>
+            </div>
+            <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' id="approval"></div>
+
+        </div>  
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+</body>
+</html>
