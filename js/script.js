@@ -65,7 +65,6 @@ function onBtnClick(){
         $('#approval').text("Years Spent should be an integer value")
         return
     }
-
     $.post(url,{
         satisfaction_level: parseFloat(satisfaction),
         last_evaluation: parseFloat(last),
@@ -75,7 +74,7 @@ function onBtnClick(){
         work_accident: work,
         promotion_last_5years: promotion,
         salary: sal,
-        dept: dep,
+        dept: dep.toLowerCase(),
     },function(data,status){
             console.log(data.Apporval_Prediction)
             $('#approval').css({ color: "#b4c9df" });
